@@ -1,0 +1,64 @@
+﻿
+
+<div class="layout-page">
+    <div class="just-body">
+        <div class="card just-body">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="mb-0">Nuevo contacto para cliente</h5>
+            </div>
+            <div class="card-body just-body" id="newContactDiv">
+                <form id="formContact">
+                     <div class="row mb-3">
+                       <label class="col-sm-5 col-form-label" for="basic-default-name">Nuevo contacto</label>
+                        <div class="col-sm-7">
+                            <input type="text"
+                                   class="form-control"
+                                   id="CustomerId"
+                                   placeholder="ID CUSTOMER"
+                                   disabled
+                                   required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-5 col-form-label" for="basic-default-name">Nombre completo</label>
+                        <div class="col-sm-7">
+                            <input type="text"
+                                   class="form-control"
+                                   id="FullName"
+                                   placeholder="John Doe"
+                                   required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-5 col-form-label" for="basic-default-company">Dirección</label>
+                        <div class="col-sm-7">
+                            <input type="text"
+                                   class="form-control"
+                                   id="Address"
+                                   placeholder="Cra 00 #00-00"
+                                   required />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-5 col-form-label" for="basic-default-email">Número de télefono</label>
+                        <div class="col-sm-7">
+                            <div class="input-group input-group-merge">
+                                <input type="tel"
+                                       id="NumberPhone"
+                                       class="form-control"
+                                       placeholder="300 000 00 00"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-7">
+                            <button type="submit" class="btn btn-primary">Crear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/newcontactscript.js"></script>

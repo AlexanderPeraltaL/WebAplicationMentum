@@ -1,0 +1,89 @@
+﻿
+   <div id="divPrimary" class="table-responsive text-nowrap">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Completo</th>
+                <th>Dirección</th>
+                <th>Numero Contacto</th>
+                <th>Fecha Creación</th>
+                <th>Editar</th>
+                <th>Ver Contactos</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+        </tbody>
+    </table>
+    </div>
+    <div>
+        <a class="btn btn-primary" href="/App/NewCustomer">CREAR CLIENTE</a>
+    </div>
+
+    <p>Click en cualquier cabecera de la tabla para ordenar los elementos.</p>
+
+    <div class="modal" id="basicModal" tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalheader"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <form id="formCustomerUpdate">
+                        <div class="row mb-3">
+                            <label class="col-sm-5 col-form-label" for="basic-default-name">Id</label>
+                            <div class="col-sm-7">
+                                <input type="text"
+                                       class="form-control"
+                                       id="Id"
+                                       placeholder="00"
+                                       required
+                                       disabled />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="col-sm-5 col-form-label" for="basic-default-name">Nombre completo</label>
+                            <div class="col-sm-7">
+                                <input type="text"
+                                       class="form-control"
+                                       id="FullName"
+                                       placeholder="John Doe"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-5 col-form-label" for="basic-default-company">Dirección</label>
+                            <div class="col-sm-7">
+                                <input type="text"
+                                       class="form-control"
+                                       id="Address"
+                                       placeholder="Cra 00 #00-00"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-5 col-form-label" for="basic-default-email">Número de télefono</label>
+                            <div class="col-sm-7">
+                                <div class="input-group input-group-merge">
+                                    <input type="tel"
+                                           id="NumberPhone"
+                                           class="form-control"
+                                           placeholder="300 000 00 00"
+                                           required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/customersscript.js"></script>
