@@ -94,12 +94,14 @@ $("#formCustomerUpdate").submit(function (e) {
 
 
 function buildRow(data) {
+    console.log(data.birthday);
     const tr = $("<tr>");
     tr.append($("<td>").text(data.id));
     tr.append($("<td>").text(data.fullName));
     tr.append($("<td>").text(data.address));
     tr.append($("<td>").text(data.numberPhone));
     tr.append($("<td>").text(data.customersModel.id));
+    tr.append($("<td>").text(data.birthday));
     tr.append(
         $(`<td><button class='btn btn-primary' onClick='viewModal(${data.id})'>Edit</button></td>`)
     );
@@ -120,10 +122,13 @@ function viewModal(id) {
         type: "get",
         url: `/Contacts/GetById/${id}`,
         success: function (customer) {
+            console.log(customer)
+            var birthday = new Date(customer.birthday);
             $("#Id").val(customer.id);
             $("#FullName").val(customer.fullName);
             $("#Address").val(customer.address);
             $("#NumberPhone").val(customer.numberPhone);
+            $("#Birthday").val(birthday.toISOString().substring(0, 10));
 
         }
     });

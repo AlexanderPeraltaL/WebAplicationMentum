@@ -8,5 +8,6 @@
         public string Address { get; set; }
         public string NumberPhone { get; set; }
         public DateTime DateCreation { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

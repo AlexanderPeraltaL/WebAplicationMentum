@@ -87,7 +87,7 @@ $("#formCustomerUpdate").submit(function (e) {
 
 
 window.addEventListener("DOMContentLoaded", function () {
-    console.log("lkdhu")
+    
     $.ajax({
         type: "get",
         url: "../Customers/GetList",

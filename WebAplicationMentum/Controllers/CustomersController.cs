@@ -18,7 +18,7 @@ namespace WebAplicationMentum.Controllers
         public ActionResult<CustomersModel> GetById(int id)
         {
             CustomerSelectById customerSelectById = new CustomerSelectById(id);
-            var customer = customerSelectById.Process();
+            CustomersModel customer = customerSelectById.Process();
             return customer;
         }
 

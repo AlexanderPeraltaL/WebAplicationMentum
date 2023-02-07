@@ -8,7 +8,7 @@ namespace WebAplicationMentum.Business
     public class CustomerContactSelectAll
     {
         private readonly int id;
-        private string query = @"SELECT CC.ID, CC.CUSTOMER_ID, CC.FULL_NAME, CC.ADDRESS, CC.NUMBER_PHONE FROM CUSTOMERS_CONTACTS AS CC
+        private string query = @"SELECT CC.ID, CC.CUSTOMER_ID, CC.FULL_NAME, CC.ADDRESS, CC.NUMBER_PHONE, CC.BIRTHDAY FROM CUSTOMERS_CONTACTS AS CC
                                 INNER JOIN CUSTOMERS AS C ON C.ID = CC.CUSTOMER_ID
                                 WHERE C.ID = @ID";
 
@@ -36,8 +36,9 @@ namespace WebAplicationMentum.Business
                         FullName = sqlData["FULL_NAME"].ToString(),
                         Address = sqlData["ADDRESS"].ToString(),
                         NumberPhone = sqlData["NUMBER_PHONE"].ToString(),
-                        customersModel = new CustomersModel { Id = Convert.ToInt32(sqlData["CUSTOMER_ID"]) }
-                    });
+                        customersModel = new CustomersModel { Id = Convert.ToInt32(sqlData["CUSTOMER_ID"]) },
+                        Birthday = sqlData["BIRTHDAY"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(sqlData["BIRTHDAY"])
+                    }) ;
                 }
 
                 SqlConnectionData.connection.Close();

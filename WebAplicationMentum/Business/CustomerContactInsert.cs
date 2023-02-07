@@ -6,8 +6,8 @@ namespace WebAplicationMentum.Business
 {
     public class CustomerContactInsert
     {
-        private string query = @"INSERT INTO CUSTOMERS_CONTACTS(FULL_NAME, ADDRESS, NUMBER_PHONE, CUSTOMER_ID)
-                                 VALUES(@FULL_NAME, @ADDRESS, @NUMBER_PHONE, @CUSTOMER_ID)";
+        private string query = @"INSERT INTO CUSTOMERS_CONTACTS(FULL_NAME, ADDRESS, NUMBER_PHONE, CUSTOMER_ID, BIRTHDAY)
+                                 VALUES(@FULL_NAME, @ADDRESS, @NUMBER_PHONE, @CUSTOMER_ID, @BIRTHDAY)";
         private CustomerContactModel customerContactModel;
 
         public CustomerContactInsert(CustomerContactModel customerContactsModel)
@@ -24,7 +24,8 @@ namespace WebAplicationMentum.Business
                     { "@FULL_NAME", customerContactModel.FullName },
                     { "@ADDRESS", customerContactModel.Address },
                     { "@NUMBER_PHONE", customerContactModel.NumberPhone },
-                    { "@CUSTOMER_ID", customerContactModel.customersModel.Id }
+                    { "@CUSTOMER_ID", customerContactModel.customersModel.Id },
+                    { "@BIRTHDAY", Convert.ToDateTime(customerContactModel.Birthday).ToString("yyyy/MM/dd")}
                 };
 
                 SqlDml sqlDml = new SqlDml(values, query);
